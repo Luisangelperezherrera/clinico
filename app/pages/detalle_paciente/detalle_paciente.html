@@ -1,0 +1,92 @@
+<ion-header>
+  <ion-navbar>
+    <button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Datos Paciente</ion-title>
+  </ion-navbar>
+
+  <!--<ion-toolbar [attr.primary]="isAndroid ? '' : null" no-border-top>
+      <ion-segment [(ngModel)]="dPacientes" [attr.light]="isAndroid ? '' : null">
+        <ion-segment-button value="generales">
+          Datos Generales
+        </ion-segment-button>
+        <ion-segment-button value="patologicos">
+          Datos Patologicos
+        </ion-segment-button>
+      </ion-segment>
+  </ion-toolbar>-->
+</ion-header>
+
+<ion-content padding class="detalle_paciente">
+    <div [ngSwitch]="dPacientes">
+       <!--<ion-list *ngSwitchCase="'generales'">
+        <ion-card>
+          <img src="img/advance-card-map-madison.png">
+        </ion-card>-->
+        <h3>Datos Paciente</h3>
+          <ion-item>
+            <h2>Nombre</h2>
+            <p>{{datPaciente.nombre}}</p>
+          </ion-item>
+
+          <ion-item>
+            <h2>Genero</h2>
+            <p>{{datPaciente.genero}}</p>
+          </ion-item>
+
+          <ion-item>
+            <h2>Fecha de Nacimiento</h2>
+            <p>{{datPaciente.fechaNacimiento}}</p>
+          </ion-item>
+
+          <ion-item>
+            <h2>Telefono</h2>
+            <p>{{datPaciente.telefono}}</p>
+          </ion-item>
+
+          <ion-item>
+            <h2>Contacto</h2>
+            <p>{{datPaciente.contacto}}</p>
+          </ion-item>
+
+          <ion-item>
+            <h2>Tipo de Sangre</h2>
+            <p>{{datPaciente.tipo}}</p>
+          </ion-item>
+
+          <ion-item>
+            <span item-left>Estatura</span>
+            <span item-left>{{datPaciente.statura}}</span>
+            <span item-left>Peso</span>
+            <span item-left>{{datPaciente.peso}}</span>
+          </ion-item>
+        <!-- </ion-list> -->
+
+        <ion-list>
+          <h3>Enfermedades</h3>
+          <li *ngFor="let i of enfermedades">
+            <ion-item>
+              <p>{{i.enfermedad}}</p>
+            </ion-item>
+          </li>
+        </ion-list>
+
+        <ion-list>
+          <h3>Contactos</h3>
+          <li *ngFor="let i of contactos">
+            <ion-item>
+              <h2>Nombre</h2>
+              <p>{{i.contacto}}</p>
+              <h2>Parentesco</h2>
+              <p>{{i.parentesco}}</p>
+              <h2>Tel&eacute;fono</h2>
+              <p>{{i.telefono}}</p>
+            </ion-item>
+          </li>
+        </ion-list>
+      </div>
+
+
+
+</ion-content>

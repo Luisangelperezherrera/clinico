@@ -1,0 +1,28 @@
+<ion-navbar *navbar>
+  <ion-title>Alta de Usuario</ion-title>
+</ion-navbar>
+
+<ion-content padding class="getstart">
+  <br>
+  <div padding>
+      <div class="wellcome-content">
+        <div class="wellcome-image">
+          <img src="img/logos.png" class="wellcome-image"/>
+        </div>
+      </div>
+    </div>
+  <form #loginCreds="ngForm" style="padding-top: 20%;" (ngSubmit)="login(loginCreds.value)">
+    <ion-item>
+      <ion-input type="text" placeholder="Username" ngControl="userName" class="background-button"></ion-input>
+    </ion-item>
+    <ion-item style="margin-top:8px">
+      <ion-input type="text" placeholder="Password" ngControl="password"  class="background-button"></ion-input>
+    </ion-item>
+      <button block type="submit" style="margin-top:8px">Entrar</button>
+    <br>
+  <div padding>
+    <!-- <button block type="submit">Sing Up</button> -->
+    <button block type="submit" class="scanear-button">Escanear</button>
+  </div>
+  </form>
+</ion-content>
